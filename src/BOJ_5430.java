@@ -25,13 +25,15 @@ public class BOJ_5430 {
 
             char [] oper = lines[0].toCharArray();
 
+            if(!lines[2].equals("[]")) {
+                String data = lines[2].substring(1, lines[2].length() - 1);
+                String[] datas = data.split(",");
 
-            String data = lines[2].substring(1, lines[2].length()-1);
-            String [] datas = data.split(",");
-
-            for(String s : datas){
-                element.offerFirst(Integer.parseInt(s));
+                for (String s : datas) {
+                    element.offerFirst(Integer.parseInt(s));
+                }
             }
+
             boolean temp = false;
             for(char c : oper){
                 switch (c){
