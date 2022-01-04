@@ -18,8 +18,8 @@ public class BOJ_11725 {
             list[b].add(a);
         }
         int [] parents = new int[n+1];
-        dfs(list, parents, 1, 0);
-
+//        dfs(list, parents, 1, 0);
+        bfs(list,n, parents, 1,0);
         for(i = 2; i <= n; i++){
             System.out.println(parents[i]);
         }
@@ -32,8 +32,28 @@ public class BOJ_11725 {
         }
     }
 
-    private static void bfs(){
+    private static void bfs(ArrayList<Integer> [] list, int nn, int [] parents, int start, int parent){
+        Queue<int[]> q = new ArrayDeque<>();
+        boolean [] visited = new boolean[nn+1];
+        for(int i = 0; i< nn+1; i++){
+            visited[i] = false;
+        }
 
+        int [] s = {start, parent};
+        q.add(s);
+
+        while (!q.isEmpty()){
+            int [] n = q.poll();
+
+            parents[n[0]] = n[1];
+            for(int temp: list[n[0]]){
+                if(temp != n[0] && !visited[temp]) {
+                    int [] ss = {temp, n[0]};
+                    q.add(ss);
+                    visited[temp] = true;
+                }
+            }
+        }
     }
 }
 
