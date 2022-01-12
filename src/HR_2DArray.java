@@ -18,7 +18,7 @@ public class HR_2DArray {
             i++;
 
         }
-        int maxV = 0;
+        int maxV = -400;
         int [] dy = {-1,-1,-1,0,1,1,1};
         int [] dx = {-1,0,1,0,-1,0,1};
         for(int y = 1; y< 5; y++){
