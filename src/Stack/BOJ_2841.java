@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Stack;
 import java.util.StringTokenizer;
-
+// 해시맵보다 배열이 더 빨랐을듯
 public class BOJ_2841 {
     public static void main(String[] args) throws IOException {
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
