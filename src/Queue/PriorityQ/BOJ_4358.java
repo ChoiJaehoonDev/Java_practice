@@ -1,8 +1,6 @@
 package Queue.PriorityQ;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.TreeMap;
 
@@ -22,12 +20,9 @@ public class BOJ_4358 {
                 tree.put(input, 1f);
             }
         }
-//        Object [] name = tree.keySet().toArray();
-//        Arrays.sort(name);
-//
+
         Iterator<String> it = tree.keySet().iterator();
 
-//        for(String c : tree.keySet()){
         while(it.hasNext()){
             String c = it.next();
             bw.write(c + String.format(" %.4f\n",(tree.get(c)/total)*100));
